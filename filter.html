@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filter</title>
+<style>
+    #videoContainer {
+        position: relative;
+    }
+
+    #video {
+        width: 90vw;
+    }
+
+    #filterSelect {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 100;
+    }
+</style>
+</head>
+<body>
+<div id="videoContainer">
+    <video id="video" controls>
+        <source src="video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <select id="filterSelect">
+        <option value="none">None</option>
+        <option value="grayscale(100%)">Grayscale</option>
+        <option value="sepia(100%)">Sepia</option>
+        <option value="invert(100%)">Invert</option>
+        <option value="contrast(200%)">High Contrast</option>
+        <option value="blur(5px)">Blur</option>
+    </select>
+</div>
+
+    <a href="lopp.html">Loop</a>
+    <a href="flip.html">Flip</a>
+    <a href="grid.html">Grid</a>    
+
+<script>
+    const video = document.getElementById('video');
+    const filterSelect = document.getElementById('filterSelect');
+
+    filterSelect.addEventListener('change', function() {
+        const selectedFilter = filterSelect.value;
+        video.style.filter = selectedFilter;
+    });
+</script>
+</body>
+</html>

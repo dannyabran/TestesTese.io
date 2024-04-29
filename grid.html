@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Grid</title>
+</head>
+  <body>
+  
+  <div class="grid-container" id="gridContainer">
+  </div>
+
+    <a href="lopp.html">Loop</a>
+    <a href="flip.html">Flip</a>
+    <a href="filter.html">Filter</a>
+  
+  <script>
+    const videoUrl = 'video2.mp4';
+    const videoCount = 8;
+    const delayVideos = 1000;
+  
+    function createVideoGrid() {
+      const gridContainer = document.getElementById('gridContainer');
+  
+      for (let i = 0; i < videoCount; i++) {
+        const videoContainer = document.createElement('div');
+        videoContainer.classList.add('video-container');
+  
+        const video = document.createElement('video');
+        video.src = videoUrl;
+
+        setTimeout(() => {
+            video.play();
+        }, i * delayVideos);
+
+  
+        videoContainer.appendChild(video);
+        gridContainer.appendChild(videoContainer);
+      }
+    }
+  
+    createVideoGrid();
+  </script>
+  
+  </body>
+  </html>

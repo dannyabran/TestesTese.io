@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    <video width="560" src="video2.mp4" type="mp4" controls autoplay id="video"> </video>
+
+    <video width="560" src="video1.mp4" type="mp4" controls autoplay id="video2"> </video>
+    
+    <a href="flip.html">Flip</a>
+    <a href="grid.html">Grid</a>
+    <a href="filter.html">Filter</a>
+</body>
+
+<script>
+    let myvideo = document.getElementById('video');
+
+    myvideo.currentTime = 20;
+
+    
+  function loopVideo() {
+    if (myvideo.currentTime >= 22) {
+      myvideo.pause();
+      myvideo.currentTime = 20;
+      myvideo.play();
+    }
+  }
+
+  myvideo.addEventListener('timeupdate', loopVideo);
+
+
+  let myvideo2 = document.getElementById('video2');
+
+    myvideo2.currentTime = 15;
+
+  function loopVideo2() {
+    if (myvideo2.currentTime >= 23) {
+      myvideo2.pause();
+      myvideo2.currentTime = 15;
+      myvideo2.play();
+    }
+  }
+  
+  myvideo2.addEventListener('timeupdate', loopVideo2);
+
+</script>
+</html>
